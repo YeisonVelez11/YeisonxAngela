@@ -15,12 +15,27 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-Jr_XKaKZ.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-BRmLGwi0.css">
+  <script type="module" crossorigin src="/assets/index-DsBdsqlZ.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/index-CxM7Aw0c.css">
 </head>
 <body>
+    <!-- Confetti / Particle Background -->
+    <div id="confetti-container"></div>
+    
     <div class="cursor-dot"></div>
     <div class="cursor-outline"></div>
+
+    <!-- Music Player Controls -->
+    <div id="music-player">
+        <audio id="bg-audio" src="./music.mp3" loop preload="auto"></audio>
+        <button id="music-btn" class="music-btn pulse-button" aria-label="Reproducir/Pausar Música">
+            <svg id="music-icon" class="music-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18V5l12-2v13"></path>
+                <circle cx="6" cy="18" r="3"></circle>
+                <circle cx="18" cy="16" r="3"></circle>
+            </svg>
+        </button>
+    </div>
 
     <div class="loader">
         <img class="loader-text" src="/assets/logo-BuLbUdqs.png" alt="Logo Y&A" style="max-height: 120px; width: auto; object-fit: contain;">
