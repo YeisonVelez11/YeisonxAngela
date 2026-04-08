@@ -3,160 +3,76 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boda de Yeison & Angela</title>
+    <title>Recuerdos de Nuestra Boda - Yeison & Angela</title>
+    <meta name="description" content="Revive la magia de nuestro gran día. Ábrenos las puertas a nuestros mejores recuerdos.">
     
-    <!-- Open Graph / Redes Sociales (Para que se vea hermoso al enviarlo por WhatsApp) -->
+    <!-- Etiquetas Open Graph para WhatsApp, Facebook, iMessage, etc. -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="¡Nos Casamos! - Boda de Yeison & Angela">
-    <meta property="og:description" content="Acompáñanos a celebrar nuestro matrimonio este 31 de Marzo.">
-    <!-- Aquí puedes poner la ruta de una imagen bonita de ustedes o de la invitación para la miniatura en WhatsApp -->
-    <meta property="og:image" content="https://yeisonxangela.onrender.com/logo.png"> 
-    <meta property="og:url" content="https://yeisonxangela.onrender.com/">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
-  <script type="module" crossorigin src="/assets/index-CnC0WpVG.js"></script>
-  <link rel="stylesheet" crossorigin href="/assets/index-CWELDGbI.css">
+    <meta property="og:url" content="https://yeisonxangela.onrender.com/v3">
+    <meta property="og:title" content="Recuerdos de Nuestra Boda - Yeison & Angela">
+    <meta property="og:description" content="Te invitamos a revivir los mejores momentos de nuestra boda entrando a nuestra galería especial.">
+    <meta property="og:image" content="https://yeisonxangela.onrender.com/v3/images/logo.png">
+    
+    <!-- Etiquetas para Twitter/X -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yeisonxangela.onrender.com/v3">
+    <meta property="twitter:title" content="Recuerdos de Nuestra Boda - Yeison & Angela">
+    <meta property="twitter:description" content="Te invitamos a revivir los mejores momentos de nuestra boda entrando a nuestra galería especial.">
+    <meta property="twitter:image" content="https://yeisonxangela.onrender.com/v3/images/logo.png">
+
+    <!-- Favicon (El icono en la pestaña del navegador) -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Confetti / Particle Background -->
-    <div id="confetti-container"></div>
+    <div id="flash-overlay"></div>
+    <div id="flying-photos-container"></div>
     
-    <div class="cursor-dot"></div>
-    <div class="cursor-outline"></div>
+    <div id="scene-container"></div>
 
-    <!-- Music Player Controls -->
-    <div id="music-player">
-        <audio id="bg-audio" src="./music.mp3" loop preload="auto"></audio>
-        <button id="music-btn" class="music-btn pulse-button" aria-label="Reproducir/Pausar Música">
-            <svg id="music-icon" class="music-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M9 18V5l12-2v13"></path>
-                <circle cx="6" cy="18" r="3"></circle>
-                <circle cx="18" cy="16" r="3"></circle>
-            </svg>
-        </button>
+    <!-- Logo in corner before click -->
+    <div class="corner-logo-wrapper" id="top-logo">
+        <img src="images/logo.png" alt="Logo de Boda">
     </div>
 
-    <div class="loader">
-        <img class="loader-text" src="/assets/logo-BuLbUdqs.png" alt="Logo Y&A" style="max-height: 200px; width: auto; object-fit: contain;">
-        <div class="loader-line"></div>
+    <div id="content" class="hidden">
+        <div class="floral-corner top-left"></div>
+        <div class="floral-corner bottom-right"></div>
+        
+        <img src="images/logo.png" alt="Logo de Boda Final" class="final-logo fade-in">
+        <h1 class="fade-in delay-1">Un Recuerdo Eterno</h1>
+        <p class="fade-in delay-2">Gracias por acompañarnos en el día más feliz de nuestras vidas. Fue un honor compartir este momento con ustedes.</p>
+        <p class="fade-in delay-2">Aquí puedes revivir la magia de nuestra boda:</p>
+        <a href="https://photos.app.goo.gl/BahjxPR759fBPiSh7" target="_blank" class="glowing-btn fade-in delay-3">Ver Galería de Fotos</a>
     </div>
 
-    <!-- Hero con Imagen de Invitación Frontal -->
-    <header class="hero">
-        <div class="hero-bg" style="background-image: url('/assets/main-invitation-BNS0i4cb.png'); background-size: contain; background-position: center; background-repeat: no-repeat; background-color: var(--accent-color);"></div>
-        <div class="hero-content" style="pointer-events: none;">
-            <div class="scroll-indicator fade-up">
-                <span style="color: var(--primary-color);">Desliza</span>
-                <div class="line" style="background-color: var(--primary-color);"></div>
+    <div class="doors-wrapper" id="doors-wrapper">
+        <div class="floral-corner top-left"></div>
+        <div class="floral-corner bottom-right"></div>
+        
+        <div class="door-frame" id="door-frame">
+            <div class="door left-door" id="left-door">
+                <div class="door-inner">
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="handle right"></div>
+                </div>
             </div>
-        </div>
-    </header>
-
-    <!-- Sección de Texto Romántico -->
-    <section class="story split-section" style="position: relative; overflow: hidden;">
-        <div class="content-wrapper" style="position: relative; z-index: 1;">
-            <h2 class="section-title reveal-text">Un Nuevo Capítulo</h2>
-            <div class="section-text reveal-text">
-                <p>El amor no consiste en mirarse el uno al otro, sino en mirar juntos en la misma dirección.</p>
-                <div id="personalized-message" class="personalized-container reveal-up"></div>
-                <p>Queremos compartir contigo el día más especial de nuestras vidas. Acompañanos a celebrar nuestra unión, el amor que nos tenemos y el comienzo de nuestra familia.</p>
-            </div>
-        </div>
-        <div class="image-wrapper reveal-image">
-            <!-- Primera foto de ustedes aquí -->
-            <img src="/assets/image-2-CISeWk5I.jpeg" alt="Yeison y Angela 1" onerror="this.src='https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&q=80&w=800'">
-            <div class="image-overlay"></div>
-        </div>
-    </section>
-
-    <!-- Galería Horizontal (Fotos 2 a 5) -->
-    <section class="gallery-container">
-        <div class="gallery-header" style="position: relative; z-index: 1;">
-            <h2 class="section-title text-center text-light reveal-text" style="display: block; margin-bottom: 0;">Nuestra Historia</h2>
-        </div>
-        <div class="gallery-wrapper" style="position: relative; z-index: 1;">
-            <div class="gallery-scroll">
-                <div class="gallery-item">
-                    <img src="/assets/image-3-KpI3qlzv.jpeg" alt="Yeison y Angela 2" onerror="this.src='https://images.unsplash.com/photo-1520854221256-17451cc331bf?auto=format&fit=crop&q=80&w=800'">
-                    <p class="gallery-caption">El amor es mirar juntos en la misma dirección</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="/assets/image-4-Bj9CiUKI.jpeg" alt="Yeison y Angela 3" onerror="this.src='https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&q=80&w=800'">
-                    <p class="gallery-caption">Un viaje eterno que comienza con un 'Sí'</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="/assets/image-5-BlWan92B.jpeg" alt="Yeison y Angela 4" onerror="this.src='https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&q=80&w=800'">
-                    <p class="gallery-caption">Tú eres mi historia favorita</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="/assets/image-6-CgMKi3lr.jpeg" alt="Yeison y Angela 5" onerror="this.src='https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=800'">
-                    <p class="gallery-caption">Cada día te elijo a ti</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="/assets/image-7-CBx-v5_g.jpeg" alt="Yeison y Angela 6" onerror="this.src='https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=800'">
-                    <p class="gallery-caption">Dos almas, un solo corazón</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="/assets/image-8-CKOwseC4.jpeg" alt="Yeison y Angela 7" onerror="this.src='https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=800'">
-                    <p class="gallery-caption">Nuestro mejor capítulo está por escribirse</p>
-                </div>
-                <div class="gallery-item">
-                    <img src="/assets/image-9-CXt6xgvV.jpeg" alt="Yeison y Angela 8" onerror="this.src='https://images.unsplash.com/photo-1469334031218-e382a71b716b?auto=format&fit=crop&q=80&w=800'">
-                    <p class="gallery-caption">Eres mi paz y mi aventura</p>
+            <div class="door right-door" id="right-door">
+                <div class="door-inner">
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="panel"></div>
+                    <div class="handle left"></div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 
-    <!-- Sección de Detalles (Sin código de vestimenta) -->
-    <section class="details">
-        <div class="details-bg parallax-element"></div>
-        <div class="details-content">
-            <h2 class="section-title text-light reveal-text">Los Detalles</h2>
-            
-            <div class="details-grid">
-                <div class="detail-card reveal-up">
-                    <div class="icon">🗓</div>
-                    <h3>Cuándo</h3>
-                    <p>Martes, 31 de Marzo<br>12:30 PM</p>
-                </div>
-                
-                <div class="detail-card reveal-up" style="transition-delay: 0.2s">
-                    <div class="icon">📍</div>
-                    <h3>Dónde</h3>
-                    <p>Four Seasons Casa Medina<br>7 # 69a-22<br>Bogotá, D.C.</p>
-                </div>
-
-                <div class="detail-card reveal-up" style="transition-delay: 0.4s">
-                    <div class="icon">👰🤵‍♂️</div>
-                    <h3>Código de Vestimenta</h3>
-                    <p>Casual / Elegante</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- RSVP Final (Sin botón de confirmar asistencia) -->
-    <section class="rsvp">
-        <div class="content-wrapper text-center">
-            <h2 class="section-title reveal-text" style="font-size: clamp(3rem, 6vw, 5rem);">Te Esperamos</h2>
-            <p class="section-text reveal-text">
-                Nos encantaría contar con tu presencia en este momento tan mágico e inolvidable para nosotros.
-            </p>
-            <div class="floral-decoration reveal-up">
-                <img src="/assets/logo-BuLbUdqs.png" alt="Logo Y&A" style="width: 150px; height: auto; object-fit: contain;">
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <p>Y & A</p>
-        <span>Bogotá, D.C - 2026</span>
-    </footer>
-
-    <!-- Scripts -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
